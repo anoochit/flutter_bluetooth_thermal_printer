@@ -10,7 +10,6 @@ import 'package:screenshot/screenshot.dart';
 import 'package:image/image.dart' as imageLib;
 
 import '../../../routes/app_pages.dart';
-import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<PrinterController> {
   HomeView({Key? key}) : super(key: key);
@@ -26,7 +25,7 @@ class HomeView extends GetView<PrinterController> {
         actions: [
           IconButton(
             onPressed: () => Get.toNamed(Routes.SETTING),
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
           ),
         ],
       ),
@@ -54,11 +53,11 @@ class HomeView extends GetView<PrinterController> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Container(
+                  SizedBox(
                     width: 140 * 0.5,
                     child: Image.network("https://img.icons8.com/windows/512/flutter.png"),
                   ),
-                  Text(
+                  const Text(
                     "ราเมน นางแบบออดิทอเรียมอพาร์ทเมนท์อัลบัมแล็บ ติว ไฮบริด ภคันทลาพาธสตาร์ทศึกษาศาสตร์ซัพพลาย ລາເມງໂມບາຍນາງແບບອໍດິທອລ ມໍ ພັດທະເມັນ ອັລບັ້ມແລັບຕິວ ໄຮບຼິດ ພັດຄັນທະລາພັດສະຕາດ ສຶກສາສາດສະພັດໄລ",
                     maxLines: 20,
                     style: TextStyle(
@@ -67,7 +66,7 @@ class HomeView extends GetView<PrinterController> {
                       color: Colors.black,
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: 140 * 0.5,
                     child: BarcodeWidget(
                       barcode: barcodeWidget.Barcode.qrCode(),
@@ -77,7 +76,7 @@ class HomeView extends GetView<PrinterController> {
                 ],
               ),
             ),
-            delay: Duration(seconds: 3))
+            delay: const Duration(seconds: 3))
         .then(
       (capturedImage) async {
         List<int> bytes = [];
