@@ -16,6 +16,7 @@ class HomeView extends GetView<PrinterController> {
 
   ScreenshotController screenshotController = ScreenshotController();
 
+  // show home screen
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +46,9 @@ class HomeView extends GetView<PrinterController> {
     );
   }
 
+  // print test ticket
   void printTicket() {
+    // make a screenshot with data
     screenshotController
         .captureFromWidget(
             SizedBox(
@@ -84,6 +87,16 @@ class HomeView extends GetView<PrinterController> {
                       color: Colors.black,
                     ),
                   ),
+                  const Text(
+                    "نموذج رامين قاعة احتفالات ألبوم شقة مدرس معمل مسار هجين بدء تعليم علوم الإمداد",
+                    maxLines: 5,
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black,
+                    ),
+                  ),
                   const SizedBox(height: 16.0),
                   SizedBox(
                     width: 140 * 0.5,
@@ -98,6 +111,7 @@ class HomeView extends GetView<PrinterController> {
             delay: const Duration(milliseconds: 500))
         .then(
       (capturedImage) async {
+        // print screenshot data
         List<int> bytes = [];
         // Using default profile
         final profile = await CapabilityProfile.load();
