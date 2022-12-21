@@ -55,17 +55,36 @@ class HomeView extends GetView<PrinterController> {
                 children: [
                   SizedBox(
                     width: 140 * 0.5,
-                    child: Image.network("https://img.icons8.com/windows/512/flutter.png"),
+                    child: Image.asset("assets/flutter.png"),
                   ),
                   const Text(
-                    "ราเมน นางแบบออดิทอเรียมอพาร์ทเมนท์อัลบัมแล็บ ติว ไฮบริด ภคันทลาพาธสตาร์ทศึกษาศาสตร์ซัพพลาย ລາເມງໂມບາຍນາງແບບອໍດິທອລ ມໍ ພັດທະເມັນ ອັລບັ້ມແລັບຕິວ ໄຮບຼິດ ພັດຄັນທະລາພັດສະຕາດ ສຶກສາສາດສະພັດໄລ",
-                    maxLines: 20,
+                    "ราเมน นางแบบออดิทอเรียมอพาร์ทเมนท์อัลบัมแล็บ ติว ไฮบริด ภคันทลาพาธสตาร์ทศึกษาศาสตร์ซัพพลาย",
+                    maxLines: 5,
                     style: TextStyle(
                       fontSize: 10,
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
                     ),
                   ),
+                  const Text(
+                    "ລາເມງໂມບາຍນາງແບບອໍດິທອລ ມໍ ພັດທະເມັນ ອັລບັ້ມແລັບຕິວ ໄຮບຼິດ ພັດຄັນທະລາພັດສະຕາດ ສຶກສາສາດສະພັດໄລ",
+                    maxLines: 5,
+                    style: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const Text(
+                    "រ៉ាមេន មនុស្សយន្ត សាលប្រជុំ ផ្ទះល្វែ អាល់ប៊ុម មន្ទីរពិសោធន៍ ការបង្រៀន កូនកាត់ ផាកនថាឡា ផ្លូវ ចាប់ផ្តើម សិក្សា វិទ្យាសាស្ត្រ ការផ្គត់ផ្គង់",
+                    maxLines: 5,
+                    style: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(height: 16.0),
                   SizedBox(
                     width: 140 * 0.5,
                     child: BarcodeWidget(
@@ -76,7 +95,7 @@ class HomeView extends GetView<PrinterController> {
                 ],
               ),
             ),
-            delay: const Duration(seconds: 3))
+            delay: const Duration(milliseconds: 500))
         .then(
       (capturedImage) async {
         List<int> bytes = [];
